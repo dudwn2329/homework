@@ -1,0 +1,17 @@
+*{
+    margin:0 auto;
+}
+
+#wrapper{
+    width:1300px;
+}
+
+.charName{
+    display:block;
+    width:100px;
+    height: 20px;
+    line-height: 20px;
+    background-color: aquamarine;
+    font-size: 12px;
+    
+}

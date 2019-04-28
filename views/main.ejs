@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>20190427과제</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
-    <div class="charName">
-        <%for(let i = 0; i < list.length; i++){ %>
+    <div id="wrapper">
+        <form method="post">
+            <label for="nickname" class="sr-only">검색어</label>
+            <input type="text" name="nickname" class="form-control" id="nickname" placeholder="검색어 입력">
+            <button type="submit">검색하기</button>
+        </form>
+        <% if(typeof list != 'undefined') { %>
+        <div class="charName">
+            <%for(let i = 0; i < list.length; i++){ %>
             <p><%= list[i] %></p>
-        <% } %>
+            <% } %>
+        </div>
+        <% }%>
     </div>
 </body>
 

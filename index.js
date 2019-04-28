@@ -16,9 +16,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.get('/', function(req, res){
+app.get('/',function(req, res){
+    res.render('main', {});
+});
 
-    request("http://dunfa.gondr.net/char/result?server=all&name=swag", function(err, response, body){
+app.post('/', function(req, res){
+    let nickname = req.body.nickname;
+    let url = "http://dunfa.gondr.net/char/result?server=all&name=" + nickname;
+    request(url, function(err, response, body){
         let list = [];
         $ = cheerio.load(body);
 
@@ -29,7 +34,7 @@ app.get('/', function(req, res){
             list.push(msg);
         }
 
-        res.render('main', {msg:'던파 캐릭터 이름', list:list});
+        res.render('main', {msg:'검색 결과', list:list});
     });
 });
 
