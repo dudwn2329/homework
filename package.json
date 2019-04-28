@@ -1,0 +1,25 @@
+{
+  "name": "0427homework",
+  "version": "0.0.1",
+  "description": "4월27일 과제",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyeN123/190427homework.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "park minwoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HyeN123/190427homework/issues"
+  },
+  "homepage": "https://github.com/HyeN123/190427homework#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
