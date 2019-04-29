@@ -21,16 +21,16 @@ app.get('/',function(req, res){
 });
 
 app.post('/', function(req, res){
-    let nickname = req.body.nickname;
-    let url = "http://dunfa.gondr.net/char/result?server=all&name=" + nickname;
+    let search = req.body.search;
+    let url = "https://www.google.com/search?source=hp&ei=AXzGXLHfNI7u8wWMh6_wCg&q=" + search;
     request(url, function(err, response, body){
         let list = [];
         $ = cheerio.load(body);
+        
+        let result = $(".g h3");
 
-        let charList = $(".char_name");
-
-        for(let i = 0; i < charList.length; i++){
-            let msg = $(charList[i]).text();
+        for(let i = 0; i < result.length; i++){
+            let msg = $(result[i]).text();
             list.push(msg);
         }
 
